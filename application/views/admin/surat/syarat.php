@@ -47,65 +47,25 @@
                                         </button>
                                     </div>
                                     <div class="card-body">
-                                        <table id="table-data" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%;">
-                                            <thead>
-                                                <tr>
-                                                    <th> <input type="checkbox" name="chk_all" id="chk_all"> </th>
-                                                    <th>NO</th>
-                                                    <th>SYARAT DOKUMEN</th>
-                                                    <th>AKSI</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <?php
-                                                $no = 1;
-                                                ?>
-                                                <?php foreach ($surat_layanan as $layanan) : ?>
-                                                    <tr>
-                                                        <td> <input type="checkbox" name="chk_id[]" value="<?php echo $layanan->id_surat_layanan; ?>"> </td>
-                                                        <td><?php echo $no++; ?></td>
-                                                        <td><?php echo $layanan->nama_syarat_surat; ?></td>
-                                                        <td>
-                                                            <a data-role="button" class="btn btn-sm btn-warning selector" data-id="<?php echo $layanan->id_surat_layanan; ?>" data-syarat="<?php echo $layanan->id_syarat_surat; ?>" title="Edit">
-                                                                <i class="fa fa-edit"></i>
-                                                            </a>
-                                                            <a href="#hapusModal-<?php echo $layanan->id_surat_layanan; ?>" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#hapusModal-<?php echo $layanan->id_surat_layanan; ?>" title="Hapus">
-                                                                <i class="fa fa-trash"></i>
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-                                                    <!-- Modal -->
-                                                    <div class="modal fade" id="hapusModal-<?php echo $layanan->id_surat_layanan; ?>" tabindex="-1" role="dialog" aria-labelledby="hapusModalLabel" aria-hidden="true">
-                                                        <div class="modal-dialog" role="document">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header p-3">
-                                                                    <h5 class="modal-title">
-                                                                        <i class="fa fa-warning text-danger"></i>
-                                                                        Konfirmasi
-                                                                    </h5>
-                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                    <p class="mb-0">Apakah Anda Yakin Ingin Menghapus Data Ini ?</p>
-                                                                </div>
-                                                                <div class="modal-footer p-3">
-                                                                    <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">
-                                                                        <i class="fa fa-sign-out"></i>
-                                                                        Tutup
-                                                                    </button>
-                                                                    <a href="<?= site_url('surat/hapus_syarat/' . $layanan->id_surat_layanan . '/' . $layanan->id_surat) ?>" class="btn btn-sm btn-info">
-                                                                        <i class="fa fa-trash"></i>
-                                                                        Hapus
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                <?php endforeach; ?>
-                                            </tbody>
-                                        </table>
+                                        <table class="table table-striped table-bordered">
+											<thead>
+												<tr>
+													<th class="col-md-1"> <input type="checkbox" name="chk_all[]" id="chk_all"> </th>
+													<th class="col-md-1">NO</th>
+													<th>SYARAT DOKUMEN</th>
+												</tr>
+											</thead>
+											<tbody>
+												<?php $no = 1; ?>
+												<?php foreach($surat_layanan as $row): ?>
+													<tr>
+														<td> <input type="checkbox" name="chk_id[]" class="chk_id"> </td>
+														<td><?= $no++ ?></td>
+														<td><?= $row->nama_syarat_surat ?></td>
+													</tr>
+												<?php endforeach; ?>
+											</tbody>
+										</table>
                                     </div>
                                 </div>
                             </form>

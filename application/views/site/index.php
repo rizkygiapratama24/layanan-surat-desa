@@ -23,6 +23,9 @@
     </header>
     <!-- Main Content-->
     <div class="container mb-5">
+		<div class="title text-center mb-5">
+			<h2>Daftar Surat</h2>
+		</div>
         <div class="row">
             <?php
             foreach ($daftar_surat as $surat) {
@@ -47,36 +50,6 @@
             <?php
             }
             ?>
-            <!-- <div class="col-md-3">
-                <div class="post-preview">
-                    <h3 class="post-title">Surat Blabla</h3>
-                    <p class="post-meta">
-                        <a href="#!">
-                            Lihat Persyaratan
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </p>
-                    <a href="#!" class="btn btn-sm btn-secondary text-white">
-                        <i class="fas fa-file-download fa-lg"></i>
-                        Download Surat
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="post-preview">
-                    <h3 class="post-title">Surat Blabla</h3>
-                    <p class="post-meta">
-                        <a href="#!">
-                            Lihat Persyaratan
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </p>
-                    <a href="#!" class="btn btn-sm btn-secondary text-white">
-                        <i class="fas fa-file-download fa-lg"></i>
-                        Download Surat
-                    </a>
-                </div>
-            </div> -->
         </div>
     </div>
 
